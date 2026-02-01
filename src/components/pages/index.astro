@@ -1,134 +1,90 @@
 ---
-import Layout from "../components/pages/Layout.astro";
+import PageLayout from '@/layouts/PageLayout.astro';  
+import FloatBtns from '@hdud/common/components/FloatBtns.astro';  // 保留原有浮动按钮
 
+// 站点标题（浏览器标签 + OG 等使用）
 const title = "金先生摄影 | Jin - 珠海独立男摄 · 氛围感人像 & 婚礼跟拍";
-const description = "珠海本地独立摄影师，主打领证/订婚/婚礼/生日/日常跟拍。索尼色彩 | 后期魔法 | 氛围感制造机。档期戳小红书/抖音～";
+
+// 其他 meta 数据
+const description = "珠海独立摄影师，专注氛围感人像、婚礼跟拍、生活记录与街头光影。欢迎浏览我的作品集～";
+const mates = {
+  title,
+  description,
+  author: "金先生 (Jin)",
+  email: "你的邮箱@domain.com",  // 改成你自己的
+  local: Astro.currentLocale || 'zh',
+  ogImage: '/og-image/site-image.png',  // 如果有 OG 图就保留，否则删掉或换链接
+}
 ---
 
-<Layout title={title} description={description}>
-  <main class="min-h-screen bg-black text-neutral-200 font-sans">
-
-    <!-- Hero -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0">
-        < img 
-          src="/images/hero.jpg" 
-          alt="金先生摄影氛围大片" 
-          class="w-full h-full object-cover opacity-70" 
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black"></div>
-      </div>
-      
-      <div class="relative z-10 text-center px-6">
-        <h1 class="text-5xl md:text-7xl font-medium tracking-widest mb-6">
-          金先生 · Jin
-        </h1>
-        <p class="text-xl md:text-2xl text-neutral-300 mb-10">
-          珠海独立男摄 | 氛围感 · 自然光 · 抓拍派
-        </p >
-        <a 
-          href=" " 
-          target="_blank"
-          class="inline-block bg-neutral-100 text-black hover:bg-white font-medium py-4 px-12 rounded-full text-lg transition shadow-2xl"
-        >
-          戳我看档期 & 报价
-        </a >
-      </div>
-    </section>
-
-    <!-- 简介 -->
-    <section class="py-24 px-6 text-center max-w-4xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-medium mb-10">关于我</h2>
-      <p class="text-lg md:text-xl leading-loose text-neutral-300">
-        珠海本地独立男摄 | 索尼原厂快门战士<br />
-        全球已拍 0 国（正在努力解锁） | 视觉中国在等我投稿<br /><br />
-        主打领证/订婚/婚礼/生日/日常跟拍<br />
-        索尼色彩科学资深研究员 | 后期魔法大师<br />
-        0 次摆烂 | 客片即样片 | 社恐福音<br />
-        氛围感制造机 | 审美在线稳定输出<br />
-        诺贝尔摄影奖“未来提名者”（不是）<br />
-        社牛本牛 | 专治各种拍照僵硬症<br />
-        没获过奖但获过客妹一致好评<br /><br />
-        珠海接单 | 价格美丽 技术在线<br />
+<PageLayout {...mates}>
+  <main class="bg-black text-gray-200 min-h-screen py-16 px-4 md:px-8">
+    <!-- 头部大标题 -->
+    <header class="text-center mb-16">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">{title}</h1>
+      <p class="text-xl md:text-2xl text-gray-400">
+        珠海独立男摄 · 氛围感人像 & 婚礼跟拍
       </p >
-    </section>
+      <p class="mt-4 text-lg text-gray-500">
+        捕捉情绪、记录瞬间、定格美好
+      </p >
+    </header>
 
-    <!-- 作品展示 -->
-    <section class="py-20 px-6 max-w-7xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-medium text-center mb-16">作品</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-        < img 
-          src="/images/001.webp" 
-          alt="街头光影" 
-          class="w-full h-auto aspect-[4/5] object-cover rounded-2xl shadow-2xl transition hover:scale-[1.02]" 
-          loading="lazy"
-        />
-        < img 
-          src="/images/002.webp" 
-          alt="婚礼瞬间" 
-          class="w-full h-auto aspect-[3/4] object-cover rounded-2xl shadow-2xl transition hover:scale-[1.02]" 
-          loading="lazy"
-        />
-        < img 
-          src="/images/003.webp" 
-          alt="情侣日常" 
-          class="w-full h-auto aspect-[4/5] object-cover rounded-2xl shadow-2xl transition hover:scale-[1.02]" 
-          loading="lazy"
-        />
-        <!-- 多复制几行，放你自己的图，建议 6-12 张 -->
-        <!-- < img src="/images/004.webp" alt="..." class="..." loading="lazy" /> -->
+    <!-- 简短自我介绍 -->
+    <section class="max-w-4xl mx-auto text-center mb-20">
+      <p class="text-lg md:text-xl leading-relaxed mb-8">
+        你好，我是金先生（Jin），珠海本地独立摄影师。<br>
+        喜欢用镜头讲故事，偏爱自然光、氛围感与情绪表达。<br>
+        主要接拍：氛围感人像、情侣/婚礼跟拍、个人写真、生活记录。
+      </p >
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href=" " 
+           class="text-blue-400 hover:text-blue-300 text-xl">X / Twitter</a >
+        <a href="你的小红书链接" 
+           class="text-pink-400 hover:text-pink-300 text-xl">小红书</a >
+        <a href="你的抖音链接" 
+           class="text-red-500 hover:text-red-400 text-xl">抖音</a >
+        <a href="mailto:你的邮箱@domain.com" 
+           class="text-gray-300 hover:text-white text-xl">联系我</a >
       </div>
     </section>
 
-    <!-- 社媒 & 联系 -->
-    <section class="py-24 px-6 text-center">
-      <h2 class="text-4xl font-medium mb-12">随时找我</h2>
-      <div class="flex flex-col sm:flex-row justify-center gap-10 md:gap-16 text-xl">
-        <a 
-          href="https://xhslink.com/m/95cD5dEnJ7T" 
-          target="_blank" 
-          class="hover:text-white transition flex items-center gap-3"
-        >
-          <span class="text-3xl">小红书</span>
-        </a >
-        <a 
-          href="https://v.douyin.com/I8p7nPXCutU/" 
-          target="_blank" 
-          class="hover:text-white transition flex items-center gap-3"
-        >
-          <span class="text-3xl">抖音</span>
-        </a >
+    <!-- 作品预览网格（可以先放几张代表作） -->
+    <section class="mb-20">
+      <h2 class="text-4xl font-bold text-center mb-10">精选作品</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <!-- 替换成你的真实照片链接（Imgur 或其他图床） -->
+        < img src="https://i.imgur.com/你的照片1.jpg" alt="氛围人像1" 
+             class="w-full h-auto rounded-lg shadow-2xl transition-transform hover:scale-105">
+        < img src="https://i.imgur.com/你的照片2.jpg" alt="婚礼跟拍" 
+             class="w-full h-auto rounded-lg shadow-2xl transition-transform hover:scale-105">
+        < img src="https://i.imgur.com/你的照片3.jpg" alt="街头光影" 
+             class="w-full h-auto rounded-lg shadow-2xl transition-transform hover:scale-105">
+        <!-- 继续加 3-6 张 -->
       </div>
       
-      <div class="mt-16">
-        <p class="text-lg text-neutral-400 mb-6">想拍一组氛围感大片？直接戳上方链接聊～</p >
-        <a 
-          href="https://xhslink.com/m/8JlAwJ3MD2N" 
-          target="_blank"
-          class="inline-block bg-neutral-800 hover:bg-neutral-700 text-white font-medium py-5 px-14 rounded-full text-xl transition shadow-xl"
-        >
-          现在就约档期
+      <div class="text-center mt-12">
+        <a href="你的作品集页面链接或抖音/小红书主页" 
+           class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-12 rounded-full text-xl shadow-lg transition-all hover:scale-105">
+          查看完整作品集 →
         </a >
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 px-6 text-center text-neutral-500 text-sm border-t border-neutral-800">
-      <div class="flex justify-center gap-8 mb-6">
-        <a href="/" class="hover:text-neutral-300">首页</a >
-        <a href="https://xhslink.com/m/8JlAwJ3MD2N" target="_blank" class="hover:text-neutral-300">小红书</a >
-        <a href="https://v.douyin.com/I8p7nPXCutU/" target="_blank" class="hover:text-neutral-300">抖音</a >
-      </div>
-      © 2025-{new Date().getFullYear()} 金先生 · 珠海 / Buffalo · Powered by Cloudflare Pages
+    <!-- 底部信息 -->
+    <footer class="text-center py-12 text-gray-600 border-t border-gray-800">
+      <p>© 2026 金先生 (Jin) · 珠海独立摄影师</p >
+      <p class="mt-2 text-sm">
+        专注氛围感人像 · 婚礼跟拍 · 个人写真 · 生活记录
+      </p >
     </footer>
-
   </main>
-</Layout>
 
-<style>
-  /* 可选：hover 放大效果更丝滑 */
-  img {
-    transition: transform 0.4s ease;
-  }
-</style>
+  <!-- 保留原有浮动按钮（主题切换、返回顶部） -->
+  <FloatBtns btns={[{
+    type: 'theme',
+    props: { themes: siteConfig.themes }
+  }, {
+    type: 'top',
+  }]} />
+</PageLayout>
