@@ -1,37 +1,38 @@
 ---
-import FloatBtns from '@hdud/common/components/FloatBtns.astro';
-import PageLayout from '@/layouts/PageLayout.astro';
-import MemberGrid from '@/components/index/AllImageGrid.tsx'
-import { getCollection } from "astro:content";
-import { getI18n } from "@/i18n/index"
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { siteConfig } from '@/site.config';
-
-const { currentLocale } = Astro
-const i18n = await getI18n(currentLocale, 'design')
-
-const imageInfo = await getCollection('imageInfo');
-const members = imageInfo.reduce((ans, item) => {
-  return [
-    ...ans,
-    ...Object.entries(item.data).map(([it, info]) => ({ name: `${item.id}/${it}`, width: info[0], height: info[1] }))
-  ];
-}, []).sort(() => Math.random() - 0.5);
-const mates = {
-  title: i18n('menus.all'),
-	description: i18n('mate.description'),
-	author: siteConfig.author,
-	email: siteConfig.email,
-	local: currentLocale,
-	ogImage: getRelativeLocaleUrl(currentLocale, '/og-image/site-image.png'),
-}
+// 如果模板有 Layout 或其他导入，保留或删掉，根据需要
+// import Layout from '../../layouts/Layout.astro';  // 示例，如果有就留
+const title = "金先生摄影 | Raymond Jin";
 ---
-<PageLayout {...mates}>
-  <MemberGrid members={members} client:load />
-  <FloatBtns btns={[{
-    type: 'theme',
-    props: { themes: siteConfig.themes }
-  }, {
-    type: 'top',
-  }]} />
-</PageLayout>
+
+<!-- <Layout title={title}>  如果有 Layout 就包起来 -->
+
+<main style="background:#000; color:#eee; min-height:100vh; padding:40px 20px; text-align:center; font-family:system-ui, sans-serif;">
+  <h1 style="font-size:3.8rem; margin-bottom:0.5rem;">金先生 (Raymond Jin)</h1>
+  <p style="font-size:1.5rem; color:#bbb; margin-bottom:2.5rem;">
+    Buffalo, New York • 摄影作品集 • @Raymond_jin6
+  </p>
+
+  <p style="max-width:900px; margin:0 auto 4rem; line-height:1.7; font-size:1.15rem;">
+    捕捉生活中的光影瞬间、街头故事与旅行记忆。偏爱黑白、氛围光、情绪与叙事感。
+  </p>
+
+  <!-- 作品画廊：替换成你的真实照片链接 -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:1.5rem; max-width:1600px; margin:0 auto 5rem;">
+    <img src="https://i.imgur.com/你的照片1.jpg" alt="街头光影" style="width:100%; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.8); transition:transform 0.3s;">
+    <img src="https://i.imgur.com/你的照片2.jpg" alt="旅行瞬间" style="width:100%; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.8); transition:transform 0.3s;">
+    <img src="https://i.imgur.com/你的照片3.jpg" alt="日常捕捉" style="width:100%; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.8); transition:transform 0.3s;">
+    <!-- 加 6-15 张你的摄影作品，先测试效果 -->
+  </div>
+
+  <!-- 联系方式 -->
+  <div style="margin:5rem 0;">
+    <a href="https://x.com/Raymond_jin6" style="color:#1da1f2; font-size:1.8rem; margin:0 2rem; text-decoration:none;">X / Twitter</a>
+    <a href="mailto:raymond@jinls.de5.net" style="color:#eee; font-size:1.8rem; margin:0 2rem; text-decoration:none;">邮箱联系</a>
+  </div>
+
+  <footer style="margin-top:6rem; color:#666; font-size:1rem;">
+    © 2026 金先生 • Powered by Cloudflare Pages
+  </footer>
+</main>
+
+<!-- </Layout> 如果有 Layout 就关上 -->
