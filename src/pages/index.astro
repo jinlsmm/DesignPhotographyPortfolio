@@ -1,5 +1,113 @@
----
-import App from '@/components/pages/index.astro'
+
+const title = "金先生摄影 | Jin - 珠海独立男摄 · 氛围感人像 & 婚礼跟拍";
+const description = "珠海独立摄影师，专注氛围感人像、婚礼跟拍、生活记录与街头光影。捕捉情绪与瞬间，欢迎浏览作品～";
 ---
 
-<App /> 
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #000;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .subtitle {
+      font-size: 1.8rem;
+      color: #bbb;
+      margin-bottom: 2.5rem;
+    }
+    .intro {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      font-size: 1.3rem;
+    }
+    .social {
+      margin: 3rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .social a {
+      background: #333;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .social a:hover { transform: scale(1.05); background: #555; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 4rem auto;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+      transition: transform 0.4s;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+    footer {
+      margin-top: 6rem;
+      padding: 3rem 0;
+      color: #777;
+      border-top: 1px solid #222;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>{title}</h1>
+    <p class="subtitle">珠海独立男摄 · 氛围感人像 & 婚礼跟拍</p >
+
+    <div class="intro">
+      <p>你好，我是金先生（Jin），珠海本地独立摄影师。</p >
+      <p>喜欢用镜头讲述故事，偏爱自然光、氛围感与情绪表达。主要接拍氛围感人像、情侣/婚礼跟拍、个人写真、生活记录。</p >
+      <p>欢迎浏览我的作品～</p >
+    </div>
+
+    <!-- 社交链接 -->
+    <div class="social">
+      <a href=" "> https://v.douyin.com/I8p7nPXCutU/ 4@8.com</a >
+      <a href=" https://xhslink.com/m/8JlAwJ3MD2N">小红书笔记</a >
+      <a href="https://x.com/Raymond_jin6">X / Twitter</a >
+      <a href="272378145@qq.com">邮箱联系</a >
+    </div>
+
+    <!-- 作品网格（替换成你的真实照片链接） -->
+    <div class="gallery">
+      < img src="https://i.imgur.com/你的照片1.jpg" alt="氛围人像1">
+      < img src="https://i.imgur.com/你的照片2.jpg" alt="婚礼跟拍瞬间">
+      < img src="https://i.imgur.com/你的照片3.jpg" alt="街头光影">
+      < img src="https://i.imgur.com/你的照片4.jpg" alt="生活捕捉">
+      <!-- 加更多你的照片链接，先放 4-12 张 -->
+    </div>
+
+    <footer>
+      © 2026 金先生 (Jin) · 珠海独立摄影师 · All Rights Reserved
+    </footer>
+  </div>
+</body>
+</html>
