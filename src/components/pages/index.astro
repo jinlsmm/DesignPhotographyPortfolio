@@ -1,49 +1,59 @@
 ---
-// 如果模板有 Layout 或其他导入，保留或删掉，根据需要
-// import Layout from '../../layouts/Layout.astro';  // 示例，如果有就留
+import Layout from "../layouts/Layout.astro";
+
 const title = "金先生摄影 | Jin";
 ---
 
-<!-- <Layout title={title}>  如果有 Layout 就包起来 -->
+<Layout title={title}>
+  <main class="min-h-screen bg-black text-neutral-200 px-6 py-20 text-center font-sans">
 
-<main style="background:#000; color:#eee; min-height:100vh; padding:40px 20px; text-align:center; font-family:system-ui, sans-serif;">
-  <h1 style="font-size:3.8rem; margin-bottom:0.5rem;">金先生 (Jin)</h1>
-  <p style="font-size:1.5rem; color:#bbb; margin-bottom:2.5rem;">
-    Buffalo, New York • 摄影作品集 • @jin
-  </p>
+    <!-- 标题 -->
+    <h1 class="text-5xl md:text-6xl font-medium mb-4 tracking-widest">
+      金先生 · Jin
+    </h1>
 
-  <p style="max-width:900px; margin:0 auto 4rem; line-height:1.7; font-size:1.15rem;">
-    捕捉生活中的光影瞬间、街头故事与旅行记忆。偏爱黑白、氛围光、情绪与叙事感。
-  </p>
+    <p class="text-lg text-neutral-400 mb-12">
+      Buffalo, New York · 摄影作品集 · @jin
+    </p >
 
-  <!-- 作品画廊：替换成你的真实照片链接 -->
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:1.5rem; max-width:1600px; margin:0 auto 5rem;">
-    <img src="https://i.imgur.com/你的照片1.jpg" alt="街头光影" style="width:100%; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.8); transition:transform 0.3s;">
-    <img src="https://i.imgur.com/你的照片2.jpg" alt="旅行瞬间" style="width:100%; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.8); transition:transform 0.3s;">
-    <img src="https://i.imgur.com/你的照片3.jpg" alt="日常捕捉" style="width:100%; border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.8); transition:transform 0.3s;">
-    <!-- 加 6-15 张你的摄影作品，先测试效果 -->
-  </div>
+    <!-- 简介 -->
+    <p class="max-w-3xl mx-auto mb-24 text-base md:text-lg leading-loose text-neutral-300">
+      
+ 珠海独立男摄 | 索尼原厂快门战士<br />
+ 全球已拍0国 | 视觉中国在等我投稿<br />
+ 档期戳我：
+ 主打领证/订婚/婚礼/生日/日常跟拍<br />
+ 索尼色彩科学资深研究员 | 后期魔法大师<br />
+ 0次摆烂 | 客片即样片 | 社恐福音<br />
+ 氛围感制造机 | 审美在线稳定输出<br />
+ 诺贝尔摄影奖“未来提名者”（不是）<br />
+ 社牛本牛 | 专治各种拍照僵硬症<br />
+ 没获过奖但获过客妹一致好评<br />
+珠海接单 | 价格美丽 技术在线<br />
+    </p >
 
-  <!-- 联系方式 -->
-  <div style="margin:5rem 0;">
-    <a href=" https://xhslink.com/m/8JlAwJ3MD2N" style="color:#1da1f2; font-size:1.8rem; margin:0 2rem; text-decoration:none;">小红薯</a>
-    <a href="https://v.douyin.com/I8p7nPXCutU/ 4@8.com" style="color:#eee; font-size:1.8rem; margin:0 2rem; text-decoration:none;">抖音</a>
-  </div>
+    <!-- 作品 -->
+    <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-32">
+      < img src="/images/001.webp" alt="街头光影" class="w-full rounded-xl shadow-2xl" />
+      < img src="/images/002.webp" alt="旅行瞬间" class="w-full rounded-xl shadow-2xl" />
+      < img src="/images/003.webp" alt="日常捕捉" class="w-full rounded-xl shadow-2xl" />
+      <!-- 继续加 -->
+    </section>
 
-  <footer style="margin-top:6rem; color:#666; font-size:1rem;">
-    © 2026 金先生 • Powered by Cloudflare Pages
-  </footer>
-</main>
-<!-- 抖音主页按钮 -->
-<div class="mt-16">
-  <a 
-    href="https://v.douyin.com/I8p7nPXCutU/ 4@8.com" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg transition-all hover:scale-105"
-  >
-    去我的抖音主页看更多视频 →
-  </a >
-  <p class="mt-4 text-gray-400 text-sm">（摄影日常、幕后、花絮都在这里更新）</p >
-</div>
-<!-- </Layout> 如果有 Layout 就关上 -->
+    <!-- 社媒 -->
+    <div class="flex justify-center gap-16 mb-32 text-xl">
+      <a href=" " target="_blank" class="text-neutral-300 hover:text-white transition">
+        小红书
+      </a >
+      <a href="https://v.douyin.com/I8p7nPXCutU/" target="_blank" class="text-neutral-300 hover:text-white transition">
+        抖音
+      </a >
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-sm text-neutral-500">
+      © 2026 金先生 · Cloudflare Pages
+    </footer>
+
+  </main>
+</Layout>
