@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: "jinls",
+  title: "金老师",
 	author: "金老师",
 	description: "设计师、摄影师和创意艺术家——在这里展示您最好的作品!",
 	email: "tallyjin@outlook.com",
