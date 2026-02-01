@@ -1,7 +1,7 @@
 export default {
   mate: {
     description: "デザイナー、写真家、クリエイティブアーティスト — ここであなたの最高の作品を披露してください。",
-    title: "金老师",
+    title: "金先生",
   },
   btns: {
     backToTop: 'トップに戻る'
