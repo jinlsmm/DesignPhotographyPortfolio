@@ -1,59 +1,134 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const title = "金先生摄影 | Jin";
+const title = "金先生摄影 | Jin - 珠海独立男摄 · 氛围感人像 & 婚礼跟拍";
+const description = "珠海本地独立摄影师，主打领证/订婚/婚礼/生日/日常跟拍。索尼色彩 | 后期魔法 | 氛围感制造机。档期戳小红书/抖音～";
 ---
 
-<Layout title={title}>
-  <main class="min-h-screen bg-black text-neutral-200 px-6 py-20 text-center font-sans">
+<Layout title={title} description={description}>
+  <main class="min-h-screen bg-black text-neutral-200 font-sans">
 
-    <!-- 标题 -->
-    <h1 class="text-5xl md:text-6xl font-medium mb-4 tracking-widest">
-      金先生 · Jin
-    </h1>
-
-    <p class="text-lg text-neutral-400 mb-12">
-      Buffalo, New York · 摄影作品集 · @jin
-    </p >
-
-    <!-- 简介 -->
-    <p class="max-w-3xl mx-auto mb-24 text-base md:text-lg leading-loose text-neutral-300">
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        < img 
+          src="/images/hero.jpg" 
+          alt="金先生摄影氛围大片" 
+          class="w-full h-full object-cover opacity-70" 
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black"></div>
+      </div>
       
- 珠海独立男摄 | 索尼原厂快门战士<br />
- 全球已拍0国 | 视觉中国在等我投稿<br />
- 档期戳我：
- 主打领证/订婚/婚礼/生日/日常跟拍<br />
- 索尼色彩科学资深研究员 | 后期魔法大师<br />
- 0次摆烂 | 客片即样片 | 社恐福音<br />
- 氛围感制造机 | 审美在线稳定输出<br />
- 诺贝尔摄影奖“未来提名者”（不是）<br />
- 社牛本牛 | 专治各种拍照僵硬症<br />
- 没获过奖但获过客妹一致好评<br />
-珠海接单 | 价格美丽 技术在线<br />
-    </p >
-
-    <!-- 作品 -->
-    <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-32">
-      < img src="/images/001.webp" alt="街头光影" class="w-full rounded-xl shadow-2xl" />
-      < img src="/images/002.webp" alt="旅行瞬间" class="w-full rounded-xl shadow-2xl" />
-      < img src="/images/003.webp" alt="日常捕捉" class="w-full rounded-xl shadow-2xl" />
-      <!-- 继续加 -->
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-5xl md:text-7xl font-medium tracking-widest mb-6">
+          金先生 · Jin
+        </h1>
+        <p class="text-xl md:text-2xl text-neutral-300 mb-10">
+          珠海独立男摄 | 氛围感 · 自然光 · 抓拍派
+        </p >
+        <a 
+          href=" " 
+          target="_blank"
+          class="inline-block bg-neutral-100 text-black hover:bg-white font-medium py-4 px-12 rounded-full text-lg transition shadow-2xl"
+        >
+          戳我看档期 & 报价
+        </a >
+      </div>
     </section>
 
-    <!-- 社媒 -->
-    <div class="flex justify-center gap-16 mb-32 text-xl">
-      <a href="https://xhslink.com/m/8JlAwJ3MD2N" target="_blank" class="text-neutral-300 hover:text-white transition">
-        小红书
-      </a >
-      <a href="https://v.douyin.com/I8p7nPXCutU/" target="_blank" class="text-neutral-300 hover:text-white transition">
-        抖音
-      </a >
-    </div>
+    <!-- 简介 -->
+    <section class="py-24 px-6 text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-medium mb-10">关于我</h2>
+      <p class="text-lg md:text-xl leading-loose text-neutral-300">
+        珠海本地独立男摄 | 索尼原厂快门战士<br />
+        全球已拍 0 国（正在努力解锁） | 视觉中国在等我投稿<br /><br />
+        主打领证/订婚/婚礼/生日/日常跟拍<br />
+        索尼色彩科学资深研究员 | 后期魔法大师<br />
+        0 次摆烂 | 客片即样片 | 社恐福音<br />
+        氛围感制造机 | 审美在线稳定输出<br />
+        诺贝尔摄影奖“未来提名者”（不是）<br />
+        社牛本牛 | 专治各种拍照僵硬症<br />
+        没获过奖但获过客妹一致好评<br /><br />
+        珠海接单 | 价格美丽 技术在线<br />
+      </p >
+    </section>
+
+    <!-- 作品展示 -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-medium text-center mb-16">作品</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        < img 
+          src="/images/001.webp" 
+          alt="街头光影" 
+          class="w-full h-auto aspect-[4/5] object-cover rounded-2xl shadow-2xl transition hover:scale-[1.02]" 
+          loading="lazy"
+        />
+        < img 
+          src="/images/002.webp" 
+          alt="婚礼瞬间" 
+          class="w-full h-auto aspect-[3/4] object-cover rounded-2xl shadow-2xl transition hover:scale-[1.02]" 
+          loading="lazy"
+        />
+        < img 
+          src="/images/003.webp" 
+          alt="情侣日常" 
+          class="w-full h-auto aspect-[4/5] object-cover rounded-2xl shadow-2xl transition hover:scale-[1.02]" 
+          loading="lazy"
+        />
+        <!-- 多复制几行，放你自己的图，建议 6-12 张 -->
+        <!-- < img src="/images/004.webp" alt="..." class="..." loading="lazy" /> -->
+      </div>
+    </section>
+
+    <!-- 社媒 & 联系 -->
+    <section class="py-24 px-6 text-center">
+      <h2 class="text-4xl font-medium mb-12">随时找我</h2>
+      <div class="flex flex-col sm:flex-row justify-center gap-10 md:gap-16 text-xl">
+        <a 
+          href="https://xhslink.com/m/95cD5dEnJ7T" 
+          target="_blank" 
+          class="hover:text-white transition flex items-center gap-3"
+        >
+          <span class="text-3xl">小红书</span>
+        </a >
+        <a 
+          href="https://v.douyin.com/I8p7nPXCutU/" 
+          target="_blank" 
+          class="hover:text-white transition flex items-center gap-3"
+        >
+          <span class="text-3xl">抖音</span>
+        </a >
+      </div>
+      
+      <div class="mt-16">
+        <p class="text-lg text-neutral-400 mb-6">想拍一组氛围感大片？直接戳上方链接聊～</p >
+        <a 
+          href="https://xhslink.com/m/8JlAwJ3MD2N" 
+          target="_blank"
+          class="inline-block bg-neutral-800 hover:bg-neutral-700 text-white font-medium py-5 px-14 rounded-full text-xl transition shadow-xl"
+        >
+          现在就约档期
+        </a >
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="text-sm text-neutral-500">
-      © 2026 金先生 · Cloudflare Pages
+    <footer class="py-12 px-6 text-center text-neutral-500 text-sm border-t border-neutral-800">
+      <div class="flex justify-center gap-8 mb-6">
+        <a href="/" class="hover:text-neutral-300">首页</a >
+        <a href="https://xhslink.com/m/8JlAwJ3MD2N" target="_blank" class="hover:text-neutral-300">小红书</a >
+        <a href="https://v.douyin.com/I8p7nPXCutU/" target="_blank" class="hover:text-neutral-300">抖音</a >
+      </div>
+      © 2025-{new Date().getFullYear()} 金先生 · 珠海 / Buffalo · Powered by Cloudflare Pages
     </footer>
 
   </main>
 </Layout>
+
+<style>
+  /* 可选：hover 放大效果更丝滑 */
+  img {
+    transition: transform 0.4s ease;
+  }
+</style>
