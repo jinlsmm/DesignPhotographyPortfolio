@@ -1,31 +1,20 @@
 ---
 name: "about"
 ---
-**Author Website**: https://howduudu.tech/en/
+**Author Introduction** Hello, I am Mr. Jin, an independent photographer based in Zhuhai.  
 
-**Theme URL**: https://astro.build/themes/details/designphotographyportfolio/
+**Douyin** https://v.douyin.com/I8p7nPXCutU/  
 
-**Project Repository**: https://github.com/pysunday/DesignPhotographyPortfolio
+**Xiaohongshu** https://xhslink.com/m/8JlAwJ3MD2N  
 
-**Theme Introduction**: This theme is built with Astro and designed for designers and photographers to showcase their image portfolios.
+**Theme Introduction** I enjoy telling stories through the lens, favor natural light, atmosphere, and emotional expression. Each photo captures a moment and records emotions.  
 
-**Special Statement**: The images used in this theme come from the official websites of other designers/photographers and are used solely for functional demonstration.
+## My Photography Style and Services ##
+- **Atmospheric Portraits**: Couples, personal portraits, best friend / brother shoots, emphasizing light, shadow, and emotion.  
+- **Wedding Photography**: Ceremonies, destination shoots, bridal shoots, capturing the most genuine moments of happiness.  
+- **Lifestyle Documentation**: Daily life, street photography, travel lighting, capturing the little joys in life.  
+- **Black & White Series**: Emphasizes emotional expression and narrative, exploring the depth of light and shadow.  
+- **Photography is not just a job for me, but a way of life. I hope that through my lens, more people can feel the warmth of light and shadow and the power of stories.**  
 
-**Features supported by this Astro theme**:
-
-1. Light/Dark theme toggle;
-2. Multi-language support based on i18n;
-3. Built with React, Tailwind CSS, DaisyUI, AlpineJS, and HeroUI;
-4. SEO-friendly;
-5. Responsive design;
-6. Highly customizable;
-7. Sitemap;
-8. Built-in analytics;
-9. Ready to use out of the box;
-10. Manage portfolios and page content with Markdown files;
-11. Store images by portfolio and automatically generate compressed versions;
-12. Enhance user experience with hover effects and font animations;
-13. Masonry-style image display with stable rendering;
-14. Integrated Giscus-based comment system;
-15. Open Graph tags and dynamic OG image generation for social media sharing;
-16. PWA support, allowing one-click installation to desktop from the browser.
+**Special Statement**  
+The images used in this theme are sourced from other designers/photographers' official websites and are only used for the purpose of showcasing this theme's features.
