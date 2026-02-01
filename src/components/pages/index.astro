@@ -7,11 +7,9 @@ import { getI18n } from "@/i18n/index"
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { siteConfig } from '@/site.config';
 
-// 当前语言
 const { currentLocale } = Astro
 const i18n = await getI18n(currentLocale, 'design')
 
-// 原有图片集合（保留，如果有照片会显示）
 const imageInfo = await getCollection('imageInfo');
 const members = imageInfo.reduce((ans, item) => {
   return [
@@ -19,87 +17,17 @@ const members = imageInfo.reduce((ans, item) => {
     ...Object.entries(item.data).map(([it, info]) => ({ name: `${item.id}/${it}`, width: info[0], height: info[1] }))
   ];
 }, []).sort(() => Math.random() - 0.5);
-
-// 你的个性化信息（改这里就行！）
-const customTitle = "金先生摄影 | Jin - 珠海独立男摄 · 氛围感人像 & 婚礼跟拍";
-const customDescription = "珠海独立摄影师，专注氛围感人像、婚礼跟拍、生活记录与街头光影。捕捉情绪与瞬间，欢迎浏览我的作品～";
-const customAuthor = "金先生 (Jin)";
-const customEmail = "raymond@jinls.de5.net";  // 改成你真实的邮箱
-
-// mates 对象（SEO + 布局传参）
 const mates = {
-  title: customTitle,
-  description: customDescription,
-  author: customAuthor,
-  email: customEmail,
-  local: currentLocale,
-  ogImage: getRelativeLocaleUrl(currentLocale, '/og-image/site-image.png'),  // 可删如果没图
+  title: i18n('menus.all'),
+	description: i18n('mate.description'),
+	author: siteConfig.author,
+	email: siteConfig.email,
+	local: currentLocale,
+	ogImage: getRelativeLocaleUrl(currentLocale, '/og-image/site-image.png'),
 }
 ---
-
 <PageLayout {...mates}>
-  <!-- 原有图片网格（如果集合有数据就显示） -->
   <MemberGrid members={members} client:load />
-
-  <!-- 如果网格空，加提示（可选） -->
-  {members.length === 0 && (
-    <div class="text-center py-10 text-gray-400">
-      <p>作品集加载中... 请在 src/content/imageInfo/ 添加你的照片元数据，或联系我帮改成硬编码网格。</p >
-    </div>
-  )}
-
-  <!-- 新增：抖音 & 小红书 作品区 -->
-  <section class="mt-16 mb-20 px-4 md:px-8">
-    <h2 class="text-4xl font-bold text-center mb-8 text-white">我的社交作品集</h2>
-    <p class="text-center text-xl text-gray-400 mb-10">
-      抖音：摄影短视频、花絮、幕后日常<br>
-      小红书：氛围感人像笔记、婚礼跟拍分享、拍摄心得
-    </p >
-
-    <div class="flex flex-col md:flex-row justify-center gap-10 mb-12">
-      <!-- 抖音按钮 + 嵌入示例 -->
-      <div class="text-center">
-        <a 
-          href=" "  <!-- ← 你的抖音主页短链 -->
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-5 px-12 rounded-full text-2xl shadow-xl transition-all hover:scale-105 mb-6 block"
-        >
-          去我的抖音看更多视频 →
-        </a >
-
-        <!-- 示例：嵌入一个抖音视频（替换 vid 为你的视频ID） -->
-        <div class="max-w-md mx-auto bg-black rounded-xl overflow-hidden shadow-2xl">
-          <iframe 
-            width="100%" 
-            height="500" 
-            src="https://open.douyin.com/player/video?vid=你的视频ID&autoplay=0" 
-            frameborder="0" 
-            allowfullscreen 
-            referrerpolicy="unsafe-url"
-          ></iframe>
-        </div>
-        <p class="mt-4 text-gray-500 text-sm">示例视频：最新街头光影捕捉（替换成你的）</p >
-      </div>
-
-      <!-- 小红书按钮 -->
-      <div class="text-center">
-        <a 
-          href="你的小红书主页链接"  <!-- ← 替换成你的小红书链接，例如 https://www.xiaohongshu.com/user/profile/xxxxxx -->
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-5 px-12 rounded-full text-2xl shadow-xl transition-all hover:scale-105 mb-6 block"
-        >
-          去我的小红书看笔记 →
-        </a >
-
-        <!-- 小红书没有官方 iframe，可加单个笔记网页链接示例 -->
-        <p class="text-gray-500 text-sm">笔记示例：氛围感人像拍摄心得（点击按钮跳转完整主页）</p >
-      </div>
-    </div>
-  </section>
-
-  <!-- 保留浮动按钮 -->
   <FloatBtns btns={[{
     type: 'theme',
     props: { themes: siteConfig.themes }
