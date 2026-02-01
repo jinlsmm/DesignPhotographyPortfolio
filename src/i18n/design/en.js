@@ -1,7 +1,7 @@
 export default {
   mate: {
     description: "Designers, photographers, and creative artists — showcase your best work here.",
-    title: "金老师",
+    title: "Teacher Jin",
   },
   btns: {
     backToTop: 'Back to Top'
